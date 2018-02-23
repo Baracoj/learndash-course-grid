@@ -48,7 +48,7 @@ function learndash_course_grid_css( $content ) {
 	wp_enqueue_script( 'learndash_course_grid_js', plugins_url( 'script.js', __FILE__ ), array('jquery' ) );
 	wp_enqueue_style( 'ld-cga-bootstrap', plugins_url( 'bootstrap.min.css', __FILE__ ) );
 	
-	return preg_replace( '/(.*\[ld_\w+_list.*)/', '<div id="ld_course_list">$1</div>', $content );
+	return preg_replace( '/(.*\[ld_\w+_list.*)/', '<div class="row" id="ld_course_list">$1</div>', $content );
 }
 
 add_filter( 'learndash_template', 'learndash_course_grid_course_list', 99, 5);
